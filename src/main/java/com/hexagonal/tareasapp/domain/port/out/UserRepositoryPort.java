@@ -3,6 +3,6 @@ import com.hexagonal.tareasapp.domain.model.User;
 import java.util.List;
 
 public interface UserRepositoryPort {
-  public void save(User user);
+  public User save(User user);
   public List<User> getAll();
 }
