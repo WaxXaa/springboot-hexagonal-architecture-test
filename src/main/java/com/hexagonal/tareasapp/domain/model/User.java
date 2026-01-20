@@ -8,7 +8,7 @@ public class User {
   private String name;
   private String email;
 
-  public User(UUID id, String name, String email) {
+  public User(String name, String email) {
     if (name != "" || email != "") {
       throw new InvalidParameterException("el nombre y el email no pueden estar vacios");
     } else if (name.length() < 5) {
@@ -16,7 +16,7 @@ public class User {
     } else if (email.indexOf('@') == -1) {
       throw new InvalidParameterException("el email debe ser valido");
     }
-    this.id = id;
+    this.id = UUID.randomUUID();
     this.name = name;
     this.email = email;
   }
