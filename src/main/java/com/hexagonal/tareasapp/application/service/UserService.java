@@ -1,5 +1,4 @@
 package com.hexagonal.tareasapp.application.service;
-
 import java.util.List;
 
 import org.springframework.stereotype.Service;
@@ -7,6 +6,8 @@ import org.springframework.stereotype.Service;
 import com.hexagonal.tareasapp.domain.model.User;
 import com.hexagonal.tareasapp.domain.port.in.UserUseCase;
 import com.hexagonal.tareasapp.domain.port.out.UserRepositoryPort;
+
+
 @Service
 public class UserService implements UserUseCase {
 
