@@ -28,3 +28,6 @@ Content-Type: {{contentType}}
   "name": "Carlos Ruiz",
   "email": "carlos.ruiz@example.com"
 }
+
+### GET All Users
+GET {{baseUrl}}/user/all
