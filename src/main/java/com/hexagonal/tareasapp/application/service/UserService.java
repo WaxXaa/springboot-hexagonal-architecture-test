@@ -27,5 +27,6 @@ public class UserService implements UserUseCase {
   public List<User> listAllUsers() {
     return userRepo.getAll();
   }
+  
 }
 

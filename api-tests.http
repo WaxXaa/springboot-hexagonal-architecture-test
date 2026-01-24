@@ -31,3 +31,17 @@ Content-Type: {{contentType}}
 
 ### GET All Users
 GET {{baseUrl}}/user/all
+
+
+### GET all projects
+GET {{baseUrl}}/project/all
+
+### Post create project
+POST {{baseUrl}}/project/create
+Content-Type: {{contentType}}
+
+{
+  "name": "AgentesAi",
+  "description": "StartUp AI",
+  "ownerid": "d6d7d59a-a9c0-456-9e6f-e0dbbb9ca6ed"
+}
