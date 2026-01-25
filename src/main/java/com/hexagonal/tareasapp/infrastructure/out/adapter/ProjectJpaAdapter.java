@@ -4,12 +4,15 @@ import java.util.List;
 import java.util.Optional;
 import java.util.UUID;
 
+import org.springframework.stereotype.Component;
+
 import com.hexagonal.tareasapp.domain.model.Project;
 import com.hexagonal.tareasapp.domain.port.out.ProjectRepositoryPort;
 import com.hexagonal.tareasapp.infrastructure.mapper.ProjectMapper;
 import com.hexagonal.tareasapp.infrastructure.out.entity.ProjectJpaEntity;
 import com.hexagonal.tareasapp.infrastructure.out.repository.ProjectJpaRepository;
 
+@Component
 public class ProjectJpaAdapter implements ProjectRepositoryPort{
     private final ProjectJpaRepository projectJpaRepository;
 
@@ -33,8 +36,7 @@ public class ProjectJpaAdapter implements ProjectRepositoryPort{
 
     @Override
     public List<Project> findAll() {
-        
-        return null;
+        return projectJpaRepository.findAll().stream().map(p -> ProjectMapper.entityToProject(p)).toList();
     }
 
     @Override

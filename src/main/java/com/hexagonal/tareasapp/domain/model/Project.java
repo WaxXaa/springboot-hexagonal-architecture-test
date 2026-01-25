@@ -26,6 +26,12 @@ public class Project {
         this.description = description;
         this.ownerId = ownerId;
     }
+    public Project(UUID id, String name, String description, UUID ownerId) {
+        this.id = id;
+        this.name = name;
+        this.description = description;
+        this.ownerId = ownerId;
+    }
 
     public UUID getId() {
         return id;

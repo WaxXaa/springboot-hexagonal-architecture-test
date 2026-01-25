@@ -11,4 +11,4 @@ public interface ProjectRepositoryPort {
     public Optional<Project> findById(UUID id);
     public void deleteById(UUID id);
     public List<Project> findAll();
-}   
+}
