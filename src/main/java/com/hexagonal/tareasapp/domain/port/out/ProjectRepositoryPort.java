@@ -10,5 +10,6 @@ public interface ProjectRepositoryPort {
     public Project save(Project project);
     public Optional<Project> findById(UUID id);
     public void deleteById(UUID id);
+    public boolean existsById(UUID id);
     public List<Project> findAll();
 }

@@ -47,4 +47,10 @@ public class ProjectJpaAdapter implements ProjectRepositoryPort {
 
     }
 
+    @Override
+    public boolean existsById(UUID id) {
+        // TODO Auto-generated method stub
+        return false;
+    }
+
 }
