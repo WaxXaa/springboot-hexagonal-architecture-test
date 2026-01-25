@@ -620,20 +620,11 @@ Este proyecto está bajo la Licencia MIT - ver el archivo [LICENSE](LICENSE) par
 ## 👨‍💻 Autor
 
 **Tu Nombre**
-- GitHub: [@tu-usuario](https://github.com/tu-usuario)
-- LinkedIn: [Tu Perfil](https://linkedin.com/in/tu-perfil)
-- Email: tu-email@example.com
+- GitHub: [@waxXaa](https://github.com/WaxXaa)
+- LinkedIn: [AlejandroJesús](https://linkedin.com/in/mfalejesus/)
 
----
 
-## 🙏 Agradecimientos
 
-- [Spring Boot Documentation](https://spring.io/projects/spring-boot)
-- [Hexagonal Architecture Pattern](https://alistair.cockburn.us/hexagonal-architecture/)
-- [Domain-Driven Design](https://www.domainlanguage.com/ddd/)
-- [Clean Architecture](https://blog.cleancoder.com/uncle-bob/2012/08/13/the-clean-architecture.html)
-
----
 
 <div align="center">
 
