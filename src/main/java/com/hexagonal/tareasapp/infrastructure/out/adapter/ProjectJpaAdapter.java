@@ -6,6 +6,7 @@ import java.util.UUID;
 
 import org.springframework.stereotype.Component;
 
+import com.hexagonal.tareasapp.domain.exceptions.UserNotFoundException;
 import com.hexagonal.tareasapp.domain.model.Project;
 import com.hexagonal.tareasapp.domain.port.out.ProjectRepositoryPort;
 import com.hexagonal.tareasapp.infrastructure.mapper.ProjectMapper;
@@ -26,7 +27,7 @@ public class ProjectJpaAdapter implements ProjectRepositoryPort {
     @Override
     public Project save(Project project) {
         UserJpaEntity owner = userJpaRepository.findById(project.getOwnerId())
-            .orElseThrow(() -> new RuntimeException("User not found"));
+            .orElseThrow(() -> new UserNotFoundException(project.getOwnerId()));
         return ProjectMapper.entityToProject(projectJpaRepository.save(ProjectMapper.projectToJpaEntity(project, owner)));
     }
 

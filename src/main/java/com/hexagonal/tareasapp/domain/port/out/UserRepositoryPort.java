@@ -6,5 +6,5 @@ import java.util.UUID;
 public interface UserRepositoryPort {
   public User save(User user);
   public List<User> getAll();
-  public UUID userExists(UUID id);
+  public boolean userExists(UUID id);
 }

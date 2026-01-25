@@ -10,7 +10,6 @@ import com.hexagonal.tareasapp.domain.port.out.UserRepositoryPort;
 import com.hexagonal.tareasapp.infrastructure.mapper.UserMapper;
 import com.hexagonal.tareasapp.infrastructure.out.repository.UserJpaRepository;
 
-import com.hexagonal.tareasapp.domain.exceptions.*;
 
 @Component
 public class UserJpaAdapter implements UserRepositoryPort {
@@ -32,10 +31,7 @@ public class UserJpaAdapter implements UserRepositoryPort {
   }
 
   @Override
-  public UUID userExists(UUID id) {
-    boolean userExists = userJpaRepository.existsById(id);
-    if (userExists == false)
-      throw new UserNotFoundException(id);
-    return id;
+  public boolean userExists(UUID id) {
+    return userJpaRepository.existsById(id);
   }
 }
