@@ -6,10 +6,12 @@ import java.util.UUID;
 
 import org.springframework.stereotype.Component;
 
+import com.hexagonal.tareasapp.domain.exceptions.ProjectNotFoundException;
 import com.hexagonal.tareasapp.domain.exceptions.UserNotFoundException;
 import com.hexagonal.tareasapp.domain.model.Project;
 import com.hexagonal.tareasapp.domain.port.out.ProjectRepositoryPort;
 import com.hexagonal.tareasapp.infrastructure.mapper.ProjectMapper;
+import com.hexagonal.tareasapp.infrastructure.out.entity.ProjectJpaEntity;
 import com.hexagonal.tareasapp.infrastructure.out.entity.UserJpaEntity;
 import com.hexagonal.tareasapp.infrastructure.out.repository.ProjectJpaRepository;
 import com.hexagonal.tareasapp.infrastructure.out.repository.UserJpaRepository;
@@ -33,8 +35,8 @@ public class ProjectJpaAdapter implements ProjectRepositoryPort {
 
     @Override
     public Optional<Project> findById(UUID id) {
-
-        return Optional.empty();
+        Optional<ProjectJpaEntity>projectEntity = projectJpaRepository.findById(id);
+        return projectEntity.map(ProjectMapper::entityToProject);
     }
 
     @Override
@@ -44,7 +46,7 @@ public class ProjectJpaAdapter implements ProjectRepositoryPort {
 
     @Override
     public void deleteById(UUID id) {
-
+        projectJpaRepository.deleteById(id);
     }
 
     @Override

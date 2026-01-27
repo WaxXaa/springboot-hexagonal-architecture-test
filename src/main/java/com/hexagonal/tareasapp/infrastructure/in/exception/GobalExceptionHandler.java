@@ -17,4 +17,8 @@ public class GobalExceptionHandler {
   public ResponseEntity<?> handlerProjectNotFoundException(ProjectNotFoundException ex){
     return ResponseEntity.status(HttpStatus.BAD_REQUEST).body("error: " + ex.getMessage());
   }
+  @ExceptionHandler(UnauthorizeExeption.class)
+  public ResponseEntity<?> handerUnaunthorizeException(UnauthorizeExeption ex) {
+    return ResponseEntity.status(HttpStatus.UNAUTHORIZED).body("error" + ex.getMessage());
+  }
 }

@@ -48,5 +48,11 @@ public class Project {
     public UUID getOwnerId() {
         return ownerId;
     }
+    public void setName(String name) {
+        this.name = name;
+    }
+    public void setDescription(String description) {
+        this.description = description;
+    }
 
 }

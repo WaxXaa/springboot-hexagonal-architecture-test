@@ -1,4 +1,4 @@
-package com.hexagonal.tareasapp.infrastructure.in.dto;
+package com.hexagonal.tareasapp.infrastructure.in.dto.project;
 
 import java.util.UUID;
 

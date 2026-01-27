@@ -56,3 +56,5 @@ Content-Type: {{contentType}}
   "description": "se deben listar todos los eventos del organizador",
   "project_id": "797262d4-b955-4d09-b5fa-46f7fe9b0b6e"
 }
+### Delete
+DELETE {{baseUrl}}/project/
