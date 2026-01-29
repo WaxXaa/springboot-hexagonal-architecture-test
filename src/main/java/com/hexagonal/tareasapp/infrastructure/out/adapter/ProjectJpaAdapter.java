@@ -1,12 +1,8 @@
 package com.hexagonal.tareasapp.infrastructure.out.adapter;
-
 import java.util.List;
 import java.util.Optional;
 import java.util.UUID;
-
 import org.springframework.stereotype.Component;
-
-import com.hexagonal.tareasapp.domain.exceptions.ProjectNotFoundException;
 import com.hexagonal.tareasapp.domain.exceptions.UserNotFoundException;
 import com.hexagonal.tareasapp.domain.model.Project;
 import com.hexagonal.tareasapp.domain.port.out.ProjectRepositoryPort;
@@ -51,7 +47,6 @@ public class ProjectJpaAdapter implements ProjectRepositoryPort {
 
     @Override
     public boolean existsById(UUID id) {
-        // TODO Auto-generated method stub
         return projectJpaRepository.existsById(id);
     }
 

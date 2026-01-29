@@ -36,6 +36,7 @@ GET {{baseUrl}}/user/all
 ### GET all projects
 GET {{baseUrl}}/project/all
 
+
 ### Post create project
 POST {{baseUrl}}/project/create
 Content-Type: {{contentType}}
@@ -56,5 +57,13 @@ Content-Type: {{contentType}}
   "description": "se deben listar todos los eventos del organizador",
   "project_id": "797262d4-b955-4d09-b5fa-46f7fe9b0b6e"
 }
+
+### GET all Tasks
+GET {{baseUrl}}/task/all
+
 ### Delete
 DELETE {{baseUrl}}/project/
+
+
+###delete
+DELETE {{baseUrl}}/task/

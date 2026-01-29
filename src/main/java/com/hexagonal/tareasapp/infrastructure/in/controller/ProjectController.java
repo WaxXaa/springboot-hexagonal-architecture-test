@@ -41,11 +41,12 @@ public class ProjectController {
       Project project = projectUseCase.findById(id);
       return ResponseEntity.status(HttpStatus.OK).body(project);
   }
-  @DeleteMapping("/{project_id}")
+  @DeleteMapping()
   public ResponseEntity<?> deleteProject(@Valid @RequestBody DeleteProjectRequest request){
     projectUseCase.deleteProjectByOwner(request.projecId, request.ownerId);
     return ResponseEntity.status(HttpStatus.NO_CONTENT).body("pryecto eliminado");
   }
+
   @PutMapping("/{id}")
   public ResponseEntity<?> putMethodName(@PathVariable UUID id, @RequestBody UptadeProjectRequest request) {
       Project project = projectUseCase.updateProject(id, request.ownerId, request.name, request.description);

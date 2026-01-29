@@ -1,8 +1,8 @@
 package com.hexagonal.tareasapp.infrastructure.out.adapter;
 
 import java.util.List;
+import java.util.Optional;
 import java.util.UUID;
-
 import org.springframework.stereotype.Component;
 
 import com.hexagonal.tareasapp.domain.exceptions.ProjectNotFoundException;
@@ -28,9 +28,8 @@ public class TaskJpaAdapter implements TaskRepositoryPort{
   }
 
   @Override
-  public Task delete(UUID id) {
-    // TODO Auto-generated method stub
-    return null;
+  public void deleteById(UUID id) {
+      taskJpaRepository.deleteById(id);
   }
 
   @Override
@@ -39,9 +38,9 @@ public class TaskJpaAdapter implements TaskRepositoryPort{
   }
 
   @Override
-  public Task findById(UUID id) {
-    TaskJpaEntity taskJpaEntity = taskJpaRepository.findById(id).orElseThrow(() -> new ProjectNotFoundException(id));
-    return TaskMapper.entityToTask(taskJpaEntity);
+  public Optional<Task> findById(UUID id) {
+    Optional<TaskJpaEntity> taskEntity = taskJpaRepository.findById(id);
+    return taskEntity.map(TaskMapper::entityToTask);
   }
 
   @Override

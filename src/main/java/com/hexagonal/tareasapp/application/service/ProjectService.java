@@ -66,10 +66,7 @@ public class ProjectService implements ProjectUseCase {
         if(!projectOpt.isPresent())
             throw new ProjectNotFoundException(projectId);
         Project project = projectOpt.get();
-        if (!userRepo.userExists(ownerId)) {
-            throw new UserNotFoundException(ownerId);
-        }
-        if (!(project.getId() == ownerId))
+        if (!(project.getOwnerId() == ownerId))
             throw new UnauthorizeExeption("usuario no actualizado");
         project.setName(name);
         project.setDescription(description);
